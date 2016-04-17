@@ -96,7 +96,7 @@ public class CompetitorService {
 
     
     @GET
-    @Path("/byId-{id}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response darCompetenciasPorID(@PathParam("id") Long id)
     {

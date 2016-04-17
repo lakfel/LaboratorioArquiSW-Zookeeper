@@ -69,13 +69,13 @@ public class Main {
             JSONObject datos4 = new JSONObject();
             datos4.put("nombrePagina","Competitors");
             datos4.put("nombreServicio","PorId");
-            datos4.put("rutaServicio","competitors/byId");
+            datos4.put("rutaServicio","competitors/{id}");
             
             
         
             
             Client client = Client.create();
-            WebResource target = client.resource(SERVIDOR_ZK + "inscribirPagina");
+            WebResource target = client.resource(SERVIDOR_ZK + "pagina");
             target.post(JSONObject.class,datos);
             target = client.resource(SERVIDOR_ZK+ "estadoPagina");
             target.post(JSONObject.class,datos2);

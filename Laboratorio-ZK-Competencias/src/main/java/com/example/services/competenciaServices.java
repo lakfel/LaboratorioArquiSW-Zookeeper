@@ -52,7 +52,7 @@ public class competenciaServices
      * @return
      */
     @GET
-    @Path("/winners-{name}")
+    @Path("/winners/{name}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllByID(@PathParam("name") String name) 
     {
@@ -69,8 +69,9 @@ public class competenciaServices
             if(estado.equals("Activo"))
             for (int i = 0; i < competencias.size(); i++) 
              {
-              
-                target = client.resource("http://"+url+"-"+competencias.get(i).getWinnerId());
+                url = pag.getString("_url");
+                url.replace("{id}", "" +competencias.get(i).getWinnerId());
+                target = client.resource("http://"+url);
                 competidores.addAll(target.get(List.class));     
              }
             client.destroy();

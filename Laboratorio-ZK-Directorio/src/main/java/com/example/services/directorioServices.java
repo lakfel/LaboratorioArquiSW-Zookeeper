@@ -131,7 +131,7 @@ public class directorioServices
     }
     
     @GET
-    @Path("/servicios-{path}")
+    @Path("/servicios/{path}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response darServicios(@PathParam("path")String path)
     {
@@ -153,7 +153,7 @@ public class directorioServices
     }
     
     @GET
-    @Path("/urlPagina-{nombrePagina}-{servicio}")
+    @Path("/urlPagina/{nombrePagina}/{servicio}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response consultarURL (@PathParam("nombrePagina") String nombrePagina, @PathParam("servicio") String servicio)
     {
@@ -207,7 +207,7 @@ public class directorioServices
      * 
      */
     @POST
-    @Path("/inscribirPagina")
+    @Path("/pagina")
     @Produces(MediaType.APPLICATION_JSON)
     public Response inscribirPagina (JSONObject datos)
     {

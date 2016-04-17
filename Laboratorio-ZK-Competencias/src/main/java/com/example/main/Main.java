@@ -70,7 +70,7 @@ public class Main {
             JSONObject datos4 = new JSONObject();
             datos4.put("nombrePagina","Competencias");
             datos4.put("nombreServicio","Ganadores");
-            datos4.put("rutaServicio","Competencias/winners");
+            datos4.put("rutaServicio","Competencias/winners/{name}");
             
             
         
